@@ -30,11 +30,10 @@ export default function ForecastListItem({
   const toggleOpen = () => setIsOpen(!isOpen);
 
   return (
-    <details
-      open={defaultOpen}
+    <div
       className='group rounded-lg border shadow-sm bg-white transition'
     >
-      <summary
+      <div
         onClick={toggleOpen}
         className='flex items-center justify-between px-4 py-3 cursor-pointer bg-gray-50 hover:bg-gray-100 transition'
       >
@@ -62,7 +61,7 @@ export default function ForecastListItem({
             aria-hidden='true'
           />
         </div>
-      </summary>
+      </div>
 
       {isOpen && (
         <div className='grid gap-4 p-4 sm:grid-cols-2 md:grid-cols-4'>
@@ -71,6 +70,6 @@ export default function ForecastListItem({
           ))}
         </div>
       )}
-    </details>
+    </div>
   );
 }
