@@ -16,6 +16,7 @@ type ForecastSummary = {
         state: number | null;
         icon: string | null;
         text: string | null;
+        iconUrl:string |null
     };
 };
 
@@ -24,9 +25,11 @@ type ForecastSpace = {
     typeLabel: string;
     from: string | null;
     to: string | null;
+    date:string | null;
     weather: {
         icon: string | null;
         text: string | null;
+        iconUrl:string |null
     };
     temperature: {
         min: number | null;
