@@ -35,7 +35,7 @@ export default async function DaysPage({ params }: DaysPageProps) {
         {['3', '7'].map((day) => (
           <Link
             key={day}
-            href={`/forecast/${day}-days/${locationCode}.html`}
+            href={`/this-is-the-forecast-page/${day}-days/${locationCode}.html`}
             className={`px-4 py-2 rounded-md border transition ${
               day === numDays
                 ? 'bg-blue-600 text-white border-blue-600'
