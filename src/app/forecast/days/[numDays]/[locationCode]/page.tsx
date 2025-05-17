@@ -1,6 +1,9 @@
 import ForecastList from '@/components/forecast/ForecastList';
-import { isUABot } from '@/lib/utils';
+import { headers } from 'next/headers';
+import {isbot} from 'isbot';
+
 import { fetchForecast, fetchLocationByCode } from '@/services/weatherService';
+
 import Link from 'next/link';
 
 export interface DaysPageProps {
@@ -18,7 +21,8 @@ export default async function DaysPage({ params }: DaysPageProps) {
     location.coordinates.latitude,
     location.coordinates.longitude
   );
-  const isBot = await isUABot();
+  
+  const isBot = isbot((await headers()).get('user-agent') || '');
 
   const filteredItems = {
     items: forecast.items.slice(1, parseInt(numDays) + 1),

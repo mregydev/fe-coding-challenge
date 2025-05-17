@@ -69,7 +69,10 @@ export default function ForecastListItem({
       </summary>
 
       {(!isCollapseable || isOpen) && (
-        <div className='grid gap-4 p-4 sm:grid-cols-2 md:grid-cols-4'>
+        <div
+          aria-label={`${date}-details`}
+          className='grid gap-4 p-4 sm:grid-cols-2 md:grid-cols-4'
+        >
           {spaces.map((space) => (
             <ForecastSpaceDetails space={space} key={v4()} />
           ))}

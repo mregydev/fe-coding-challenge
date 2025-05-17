@@ -25,7 +25,6 @@ type ForecastSpace = {
     typeLabel: string;
     from: string | null;
     to: string | null;
-    date:string | null;
     weather: {
         icon: string | null;
         text: string | null;

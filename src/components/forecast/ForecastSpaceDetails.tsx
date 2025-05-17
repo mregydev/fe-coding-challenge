@@ -1,6 +1,7 @@
-import { ForecastSpace, ForecastSummary } from '@/app/types/forecast';
+import { ForecastSpace } from '@/app/types/forecast';
+import { printTime } from '@/lib/utils';
+
 import Image from 'next/image';
-import { ChevronDown } from 'lucide-react';
 
 export interface ForecastSpaceDetailsProps {
   space: ForecastSpace;
@@ -10,26 +11,39 @@ export default function ForecastSpaceDetails({ space }: ForecastSpaceDetailsProp
   const { typeLabel, temperature, weather,from,to } = space;
 
   return (
-    <div className='border rounded-xl p-3 shadow-sm bg-gray-50 hover:bg-gray-100 transition'>
-      <div className='text-xs text-gray-500'>{typeLabel}</div>
-      <div className='font-semibold'>
+    <div
+      aria-label={`${typeLabel}-details`}
+      className='border rounded-xl p-3 shadow-sm bg-gray-50 hover:bg-gray-100 transition'
+    >
+      <div aria-label='type-label' className='text-xs text-gray-500'>
+        {typeLabel}
+      </div>
+      <div aria-label='min temp-max temp' className='font-semibold'>
         {temperature.min}°C – {temperature.max}°C
       </div>
       {weather.iconUrl && (
         <Image
           src={weather.iconUrl}
-          alt={weather.text ?? 'Weather detail'}
+          alt={weather.text ?? `${typeLabel}-weather-icon`}
           width={60}
           height={60}
           loading='lazy'
         />
       )}
       {weather.text && (
-        <div className='text-xs text-gray-500 mt-1'>{weather.text}</div>
+        <div
+          aria-label={`${typeLabel}-weather-text`}
+          className='text-xs text-gray-500 mt-1'
+        >
+          {weather.text}
+        </div>
       )}
       {from && to && (
-        <div className='text-xs text-gray-500 mt-1'>
-          {(new Date(from)).toLocaleTimeString('en-GB')} - {(new Date(to)).toLocaleTimeString('en-GB')}
+        <div
+          aria-label={`${typeLabel} from - to`}
+          className='text-xs text-gray-500 mt-1'
+        >
+          {printTime(from)} - {printTime(to)}
         </div>
       )}
     </div>
