@@ -25,13 +25,12 @@ export default async function DaysPage({ params }: DaysPageProps) {
   };
 
   return (
-    <main className="p-4 max-w-4xl mx-auto">
-      <h1 className="text-xl font-bold mb-4">
+    <main className='p-4 max-w-4xl mx-auto'>
+      <h1 className='text-xl font-bold mb-4'>
         {numDays}-Day Forecast for {location.name}
       </h1>
 
-      
-      <div className="flex gap-4 mb-6">
+      <div className='flex gap-4 mb-6'>
         {['3', '7'].map((day) => (
           <Link
             key={day}
@@ -47,7 +46,7 @@ export default async function DaysPage({ params }: DaysPageProps) {
         ))}
       </div>
 
-      <ForecastList data={filteredItems} defaultOpenAll={isBot} />
+      <ForecastList data={filteredItems} isCollapseable={!isBot} />
     </main>
   );
 }

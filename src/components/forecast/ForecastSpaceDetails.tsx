@@ -29,7 +29,7 @@ export default function ForecastSpaceDetails({ space }: ForecastSpaceDetailsProp
       )}
       {from && to && (
         <div className='text-xs text-gray-500 mt-1'>
-          {(new Date(from)).toLocaleTimeString()} - {(new Date(to)).toLocaleTimeString()}
+          {(new Date(from)).toLocaleTimeString('en-GB')} - {(new Date(to)).toLocaleTimeString('en-GB')}
         </div>
       )}
     </div>

@@ -4,12 +4,12 @@ import { ForecastWeatherNearby } from '@/app/types/forecast';
 
 export interface ForecastListProps {
   data: ForecastWeatherNearby;
-  defaultOpenAll?: boolean;
+  isCollapseable?: boolean;
 }
 
 export default function ForecastList({
   data,
-  defaultOpenAll = false,
+  isCollapseable = false,
 }: ForecastListProps) {
   return (
     <div className='space-y-4'>
@@ -18,7 +18,7 @@ export default function ForecastList({
           key={index}
           summary={item.summary}
           spaces={item.spaces}
-          defaultOpen={defaultOpenAll}
+          isCollapseable={isCollapseable}
         />
       ))}
     </div>

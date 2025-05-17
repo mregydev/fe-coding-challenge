@@ -9,30 +9,32 @@ import { useState } from 'react';
 export interface ForecastListItemProps {
   summary: ForecastSummary;
   spaces: ForecastSpace[];
-  defaultOpen?: boolean;
+  isCollapseable?: boolean;
 }
 
 export default function ForecastListItem({
   summary,
   spaces,
-  defaultOpen = false,
+  isCollapseable = false,
 }: ForecastListItemProps) {
   const { date, temperature, weather } = summary;
 
   /***
    * Only show details when panel is expanded
    * This means that hidden panel will not be added to our virtual dom
-   * This will have better impact on reconcilation process and also less intial bundle size and thus better FCP
+   * This will have better impact on reconcilation process and also less intial bundle size and thus better TTFB and FCP
    * We only exapnd all weather items when user agent is bot
    **/
-  const [isOpen, setIsOpen] = useState(defaultOpen);
+  const [isOpen, setIsOpen] = useState(false);
 
-  const toggleOpen = () => setIsOpen(!isOpen);
+  const toggleOpen = () => setIsOpen(prev=>!prev);
 
+  
+  
   return (
     <details
-      open={defaultOpen}
       className='group rounded-lg border shadow-sm bg-white transition'
+      open={!isCollapseable}
     >
       <summary
         onClick={toggleOpen}
@@ -57,14 +59,16 @@ export default function ForecastListItem({
             />
           )}
 
-          <ChevronDown
-            className='h-5 w-5 text-gray-400 transition-transform duration-300 group-open:rotate-180'
-            aria-hidden='true'
-          />
+          {isCollapseable && (
+            <ChevronDown
+              className='h-5 w-5 text-gray-400 transition-transform duration-300 group-open:rotate-180'
+              aria-hidden='true'
+            />
+          )}
         </div>
       </summary>
 
-      {isOpen && (
+      {(!isCollapseable || isOpen) && (
         <div className='grid gap-4 p-4 sm:grid-cols-2 md:grid-cols-4'>
           {spaces.map((space) => (
             <ForecastSpaceDetails space={space} key={v4()} />
