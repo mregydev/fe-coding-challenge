@@ -1,11 +1,5 @@
-import { headers } from 'next/headers';
-import {isbot} from 'isbot';
+import { format, parseISO } from 'date-fns';
 
-/**
- * 
- * @returns true is userAgent is bot otherwise false
- */
-export async function isUABot(){
-  const ua = (await headers()).get('user-agent') || '';
-  return isbot(ua);
+export function printTime(date:string){
+  return format(parseISO(date), 'HH:mm')
 }
