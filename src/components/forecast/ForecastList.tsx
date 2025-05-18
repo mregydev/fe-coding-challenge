@@ -1,4 +1,5 @@
 // components/ForecastList.tsx
+import { v4 } from 'uuid';
 import ForecastListItem from './ForecastListItem';
 import { ForecastWeatherNearby } from '@/app/types/forecast';
 
@@ -15,7 +16,7 @@ export default function ForecastList({
     <div className='space-y-4'>
       {data.items.map((item, index) => (
         <ForecastListItem
-          key={index}
+          key={v4()}
           summary={item.summary}
           spaces={item.spaces}
           isCollapseable={isCollapseable}
