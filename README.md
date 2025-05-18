@@ -16,7 +16,7 @@ You can test the deployed version here:
 * Weather is being shown for the next 3 or 7 days excluding today
 * For bots all weather panel are expanded by default 
 * Location data is cached forever but weather data is revalidated every 24h to get weather info for the new day
-* Add two unit tests just to show simple cases
+* Added two unit tests just to show simple cases
 
 ##  Archtecture 
 
