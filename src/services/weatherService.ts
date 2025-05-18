@@ -1,6 +1,7 @@
 import { apiFetch } from '@/lib/api';
 import { ForecastWeatherNearby } from '../app/types/forecast';
 import { Location } from '../app/types/location';
+import { getSecondsUntilMidnight } from '@/lib/utils';
 
 /**
  * 
