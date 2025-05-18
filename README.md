@@ -25,6 +25,11 @@ You can test the deployed version here:
 
 * Used container presentation pattern for state management 
 
+## env file 
+
+WTTR_API_TOKEN=rZP2E6Zy0JsbR3gh21Y4SDvEFU
+WTTR_APP_ID=com.wetter/web-react/coding-challenge
+WTTR_BASE_URL=https://api.wttr.io/web-app/v1
 
 ### ✅ URL Matching Logic
 
