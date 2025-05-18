@@ -28,6 +28,6 @@ export async function fetchForecast(
 ): Promise<ForecastWeatherNearby> {
   return await apiFetch<ForecastWeatherNearby>(
     `/weather/forecast/${lat}/${lng}/`,
-    86400
+    getSecondsUntilMidnight()
   );
 }
