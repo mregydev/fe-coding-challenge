@@ -1,7 +1,6 @@
 import { ForecastSpace } from '@/app/types/forecast';
 import { printTime } from '@/lib/utils';
 
-import Image from 'next/image';
 
 export interface ForecastSpaceDetailsProps {
   space: ForecastSpace;
@@ -22,7 +21,7 @@ export default function ForecastSpaceDetails({ space }: ForecastSpaceDetailsProp
         {temperature.min}°C – {temperature.max}°C
       </div>
       {weather.iconUrl && (
-        <Image
+        <img
           src={weather.iconUrl}
           alt={weather.text ?? `${typeLabel}-weather-icon`}
           width={60}

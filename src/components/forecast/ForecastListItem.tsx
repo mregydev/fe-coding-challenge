@@ -1,7 +1,6 @@
 'use client';
 
 import { ForecastSpace, ForecastSummary } from '@/app/types/forecast';
-import Image from 'next/image';
 import { ChevronDown } from 'lucide-react';
 import ForecastSpaceDetails from './ForecastSpaceDetails';
 import { v4 } from 'uuid';
@@ -51,7 +50,7 @@ export default function ForecastListItem({
 
         <div className='flex items-center gap-3'>
           {weather.iconUrl && (
-            <Image
+            <img
               src={weather.iconUrl}
               alt={weather.text ?? 'Weather'}
               width={50}
