@@ -1,6 +1,7 @@
 import { apiFetch } from '@/lib/api';
 import { ForecastWeatherNearby } from '../app/types/forecast';
 import { Location } from '../app/types/location';
+import { getSecondsUntilMidnight } from '@/lib/utils';
 
 /**
  * 
@@ -27,6 +28,6 @@ export async function fetchForecast(
 ): Promise<ForecastWeatherNearby> {
   return await apiFetch<ForecastWeatherNearby>(
     `/weather/forecast/${lat}/${lng}/`,
-    86400
+    getSecondsUntilMidnight()
   );
 }
