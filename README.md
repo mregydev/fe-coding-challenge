@@ -13,6 +13,7 @@ You can test the deployed version here:
 ## 🔧 Important Highlights
 * You can navigate to forecast page using /forecast or /this-is-the-forecast-page and **I used /this-is-the-forecast-page  as base url cause it was required in the readme ,for sure in real experience I will ask on reason for using it before implementing it**
 
+* Tailwind is used for handling styles as there is no style constraint mentioned in readme but if its required to have our own custom styles will be added easily
 * Weather is being shown for the next 3 or 7 days excluding today
 * For bots all weather panel are expanded by default 
 * Location data is cached forever but weather data is revalidated every 24h to get weather info for the new day
