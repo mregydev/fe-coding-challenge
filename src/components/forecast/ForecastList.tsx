@@ -1,4 +1,3 @@
-// components/ForecastList.tsx
 import { v4 } from 'uuid';
 import ForecastListItem from './ForecastListItem';
 import { ForecastWeatherNearby } from '@/app/types/forecast';

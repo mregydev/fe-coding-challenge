@@ -1,4 +1,3 @@
-// ForecastSpaceDetails.test.tsx
 import { render, screen } from '@testing-library/react';
 import ForecastSpaceDetails from '../ForecastSpaceDetails';
 import { ForecastSpace } from '@/app/types/forecast';
