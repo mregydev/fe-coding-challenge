@@ -18,7 +18,7 @@ You can test the deployed version here:
 * Location data is cached forever but weather data is revalidated every 24h to get weather info for the new day
 * Added two unit tests just to show simple cases
 
-##  Archtecture 
+##  Architecture 
 
 * Cause application is very small and simple used flat arch but for more complex its better to use [feature sliced design](https://feature-sliced.github.io/documentation/)
 
