@@ -14,7 +14,13 @@ You can test the deployed version here:
 * For bots all weather panel are expanded by default 
 * You can navigate to forecast page using /forecast or /this-is-the-forecast-page
 * Location data is cached forever but weather data is revalidated every 24h to get weather info for the new day
+* Add two unit tests just to show simple cases
 
+##  Archtecture 
+
+* Cause application is very small and simple used flat arch but for more complex its better to use [feature sliced design](https://feature-sliced.github.io/documentation/)
+
+* 
 
 
 ### ✅ URL Matching Logic
