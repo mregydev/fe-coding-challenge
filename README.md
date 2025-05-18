@@ -20,7 +20,7 @@ You can test the deployed version here:
 
 * Cause application is very small and simple used flat arch but for more complex its better to use [feature sliced design](https://feature-sliced.github.io/documentation/)
 
-* 
+* Used container presentation pattern for state management 
 
 
 ### ✅ URL Matching Logic
