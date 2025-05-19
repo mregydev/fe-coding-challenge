@@ -44,3 +44,8 @@ WTTR_BASE_URL=https://api.wttr.io/web-app/v1
 Project is achieving core web vitals 100% score on vercel montioring platform 
 
 ![alt text](image.png)
+
+
+## Revalidation
+
+https://fe-coding-challenge-alpha.vercel.app/api/revalidate?path=/this-is-the-forecast-page/7-days/DE0001020.html
