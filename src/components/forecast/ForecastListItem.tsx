@@ -16,7 +16,7 @@ export default function ForecastListItem({
   spaces,
   isCollapseable = false,
 }: ForecastListItemProps) {
-  const { date, temperature, weather } = summary;
+  const { date, temperature, weather,dateString } = summary;
 
   /***
    * Only show details when panel is expanded
@@ -41,7 +41,7 @@ export default function ForecastListItem({
       >
         <div>
           <div className='text-sm text-gray-500'>
-            {date && new Date(date).toDateString()}
+            {dateString}
           </div>
           <div className='font-medium'>
             {temperature.min}°C – {temperature.max}°C

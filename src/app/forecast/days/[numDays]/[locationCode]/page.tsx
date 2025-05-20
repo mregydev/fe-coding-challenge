@@ -25,7 +25,17 @@ export default async function DaysPage({ params }: DaysPageProps) {
   const isBot = isbot((await headers()).get('user-agent') || '');
 
   const filteredItems = {
-    items: forecast.items.slice(1, parseInt(numDays) + 1),
+    items: forecast.items
+      .map((item) => {
+        return {
+          ...item,
+          summary: {
+            ...item.summary,
+            dateString: new Date(item.summary.date ?? '').toDateString(),
+          },
+        };
+      })
+      .slice(1, parseInt(numDays) + 1),
   };
 
   return (

@@ -6,18 +6,19 @@ export type ForecastWeatherNearby = {
 };
 
 type ForecastSummary = {
-    date: string | null;
-    temperature: {
-        min: number | null;
-        max: number | null;
-        avg?: number | null;
-    };
-    weather: {
-        state: number | null;
-        icon: string | null;
-        text: string | null;
-        iconUrl:string |null
-    };
+  dateString: string;
+  date: string | null;
+  temperature: {
+    min: number | null;
+    max: number | null;
+    avg?: number | null;
+  };
+  weather: {
+    state: number | null;
+    icon: string | null;
+    text: string | null;
+    iconUrl: string | null;
+  };
 };
 
 type ForecastSpace = {
