@@ -31,7 +31,12 @@ export default async function DaysPage({ params }: DaysPageProps) {
           ...item,
           summary: {
             ...item.summary,
-            dateString: new Date(item.summary.date ?? '').toDateString(),
+            dateString: new Date(item.summary.date ?? '').toLocaleString(
+              'en-US',
+              {
+                timeZone: 'Europe/Berlin',
+              }
+            ),
           },
         };
       })
